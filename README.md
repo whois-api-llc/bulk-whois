@@ -4,11 +4,14 @@
 [Whois](https://www.whoisxmlapi.com/whois-api-doc.php) records for a
 list of Domains/IPs via a single REST API query.
 
-Here you'll find examples of using the API implemented in multiple languages.
+Here you'll find examples of querying the API implemented in multiple
+languages.
 
-You'll need a [WhoisXmlApi account](https://www.whoisxmlapi.com/user/create.php)
+You'll need a
+[WhoisXmlApi account](https://www.whoisxmlapi.com/user/create.php)
 to authenticate.
 
 Please, refer to the
-[Bulk Whois API User Guide](https://www.whoisxmlapi.com/bulk-whois-api-userguide.php) for
-info on input parameters, request/response formats and more.
+[Bulk Whois API User Guide](https://www.whoisxmlapi.com/bulk-whois-api-userguide.php)
+for info on input parameters, request/response formats, authentication
+instructions and more.
