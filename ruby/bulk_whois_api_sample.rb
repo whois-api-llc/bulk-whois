@@ -18,8 +18,7 @@ csv_filename = 'whois_records.csv'
 
 def call_api(path, data)
   base_data = {
-    username: 'Your bulk whois api username',
-    password: 'Your bulk whois api password',
+    apiKey: 'Your bulk whois api key',
     outputFormat: 'json'
   }
 
