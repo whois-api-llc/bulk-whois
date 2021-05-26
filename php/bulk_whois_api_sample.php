@@ -2,9 +2,8 @@
 
 namespace {
     define('DOMAINS', 'google.com,youtube.com,facebook.com,gmail.com');
-    define('PASSWORD', 'Your Bulk Whois Api password');
     define('URL', 'https://www.whoisxmlapi.com/BulkWhoisLookup/bulkServices');
-    define('USERNAME', 'Your Bulk Whois Api username');
+    define('API_KEY', 'Your Bulk Whois Api key');
 }
 
 namespace whoisxmlapi\samples\bulkwhois
@@ -355,25 +354,18 @@ namespace whoisxmlapi\samples\bulkwhois
         /**
          * @var string
          */
-        protected $_password;
-
-        /**
-         * @var string
-         */
-        protected $_username;
+        protected $_apiKey;
 
         /**
          * BulkWhoisClient constructor.
          * @param HttpClientInterface $httpClient
-         * @param string $username
-         * @param string $password
+         * @param string $apiKey
          */
         public function __construct(
-            HttpClientInterface $httpClient, $username, $password)
+            HttpClientInterface $httpClient, $apiKey)
         {
             $this->_httpClient = $httpClient;
-            $this->_username = $username;
-            $this->_password = $password;
+            $this->_apiKey = $apiKey;
         }
 
         /**
@@ -415,8 +407,7 @@ namespace whoisxmlapi\samples\bulkwhois
         protected function _callApi($path, array $data)
         {
             $params = array(
-                'username' => $this->_username,
-                'password' => $this->_password,
+                'apiKey' => $this->_apiKey,
                 'outputFormat' => static::OUTPUT
             );
 
@@ -515,7 +506,7 @@ namespace
 
         whoisxmlapi\samples\bulkwhois\ApiClientInterface::CLASS_NAME => array(
             whoisxmlapi\samples\bulkwhois\BulkWhoisClient::className()=>array(
-                'password' => @PASSWORD, 'username' => @USERNAME
+                'apiKey' => @apiKey
             )
         ),
         'example' => array(

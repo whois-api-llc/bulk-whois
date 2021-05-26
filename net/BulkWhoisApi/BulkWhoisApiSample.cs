@@ -16,7 +16,7 @@ using Newtonsoft.Json.Linq;
 namespace BulkWhoisApi
 {
     public static class BulkWhoisApiSample
-    {        
+    {
         private static void Main()
         {
             //////////////////////////
@@ -24,8 +24,7 @@ namespace BulkWhoisApi
             //////////////////////////
             var apiClient = new BulkWhoisApi
             {
-                Username = "Your bulk whois api username",
-                Password = "Your bulk whois api password",
+                apiKey = "Your bulk whois api key",
                 Url="https://www.whoisxmlapi.com/BulkWhoisLookup/bulkServices"
             };
 
@@ -74,11 +73,9 @@ namespace BulkWhoisApi
 
     public class BulkWhoisApi
     {
-        public string Password { get; set; }
-
         public string Url { get; set; }
 
-        public string Username { get; set; }
+        public string apiKey { get; set; }
 
         public string CreateRequest(IEnumerable<string> domains)
         {
@@ -123,8 +120,7 @@ namespace BulkWhoisApi
         private string Post(string path, string data)
         {
             var baseData = $@"{{
-                username: '{Username}',
-                password: '{Password}',
+                apiKey: '{apiKey}',
                 outputFormat: 'json'
             }}";
 

@@ -4,8 +4,7 @@ $url = 'https://www.whoisxmlapi.com/BulkWhoisLookup/bulkServices'
 # Fill in your details #
 ########################
 
-$username = 'Your bulk whois api username'
-$password = 'Your bulk whois api password'
+$apiKey = 'Your bulk whois api key'
 
 $domains = @('google.com', 'whoisxmlapi.com')
 
@@ -16,8 +15,7 @@ function Bulk-Whois-Json-Post ($Path, $Body) {
 
 function Create-Bulk-Whois-Request ([string[]] $Domains) {
     $body = @{
-        username = $username
-        password = $password
+        apiKey = $apiKey
         outputFormat = 'json'
         domains = $Domains
     } | ConvertTo-Json
@@ -34,8 +32,7 @@ function Create-Bulk-Whois-Request ([string[]] $Domains) {
 
 function Get-Bulk-Whois-Records ($Id, $Start, $Max) {
     $body = @{
-        username = $username
-        password = $password
+        apiKey = $apiKey
         outputFormat = 'json'
         requestId = $Id
         startIndex = $Start

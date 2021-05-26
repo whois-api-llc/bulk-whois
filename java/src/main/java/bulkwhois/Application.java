@@ -25,8 +25,7 @@ import org.springframework.web.client.RestOperations;
 @Configuration
 class AppConfig
 {
-    private static final String username = "Your Bulk Whois Api username";
-    private static final String password = "Your Bulk Whois Api password";
+    private static final String apiKey = "Your Bulk Whois Api key";
     private static final String format = "json";
 
     private static final String url =
@@ -36,8 +35,7 @@ class AppConfig
 
     public AppConfig()
     {
-        System.setProperty(propPrefix + ".username", username);
-        System.setProperty(propPrefix + ".password", password);
+        System.setProperty(propPrefix + ".apiKey", apiKey;
         System.setProperty(propPrefix + ".format", format);
         System.setProperty(propPrefix + ".url", url);
     }
@@ -116,16 +114,14 @@ public class Application
 class CommonParams
 {
     private String outputFormat;
-    private String password;
-    private String username;
+    private String apiKey;
 
     public static CommonParams create(
-        String username,
-        String password,
+        String apiKey,
         String outputFormat
     )
     {
-        return new CommonParams(username, password, outputFormat);
+        return new CommonParams(apiKey, outputFormat);
     }
 
     public CommonParams()
@@ -134,13 +130,11 @@ class CommonParams
 
     @Autowired
     public CommonParams(
-        @Value("${com.whoisxmlapi.bulkwhois.username}") String username,
-        @Value("${com.whoisxmlapi.bulkwhois.password}") String password,
+        @Value("${com.whoisxmlapi.bulkwhois.apiKey}") String apiKey,
         @Value("${com.whoisxmlapi.bulkwhois.format}") String outputFormat
     )
     {
-        this.setUsername(username)
-            .setPassword(password)
+        this.setApiKey(apiKey)
             .setOutputFormat(outputFormat);
     }
 
@@ -149,14 +143,9 @@ class CommonParams
         return outputFormat;
     }
 
-    public String getPassword()
+    public String getApiKey()
     {
-        return password;
-    }
-
-    public String getUsername()
-    {
-        return username;
+        return apiKey;
     }
 
     public CommonParams setOutputFormat(String outputFormat)
@@ -165,15 +154,9 @@ class CommonParams
         return this;
     }
 
-    public CommonParams setPassword(String password)
+    public CommonParams setApiKey(String apiKey)
     {
-        this.password = password;
-        return this;
-    }
-
-    public CommonParams setUsername(String username)
-    {
-        this.username = username;
+        this.apiKey = apiKey;
         return this;
     }
 }

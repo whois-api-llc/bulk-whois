@@ -11,8 +11,7 @@ sample:
 
 # Preparing arguments
 argparser = ArgumentParser(description='BulkWhois querry')
-argparser.add_argument('-u', '--username', help='Your bulk whois username', type=str, required=True)
-argparser.add_argument('-p', '--password', help='Your bulk whois password', type=str, required=True)
+argparser.add_argument('-u', '--apiKey', help='Your bulk whois api key', type=str, required=True)
 argparser.add_argument('-d', '--domains', help='list of domains separated by spaces',
                        type=str, nargs='+', required=True)
 argparser.add_argument('--interval', help='requesting interval', type=int, default=15)
@@ -30,8 +29,7 @@ session = requests.session()
 
 data = {
     "domains": args.domains,
-    "password": args.password,
-    "username": args.username,
+    "apiKey": args.apiKey,
     "outputFormat": args.format
 }
 

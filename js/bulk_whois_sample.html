@@ -8,8 +8,7 @@
         var url = "https://www.whoisxmlapi.com/BulkWhoisLookup/bulkServices";
 
         // Fill in your details
-        var username = "Your bulk whois api username";
-        var password = "Your bulk whois api password";
+        var apiKey = "Your bulk whois apiKey";
 
         var domains = [
             "google.com",
@@ -20,8 +19,7 @@
 
         function api(path, data, callback) {
             var baseData = {
-                password: password,
-                username: username,
+                apiKey: apiKey,
                 outputFormat: "json"
             };
 

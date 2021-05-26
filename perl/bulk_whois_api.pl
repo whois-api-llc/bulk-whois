@@ -12,8 +12,7 @@ my $url = 'https://www.whoisxmlapi.com/BulkWhoisLookup/bulkServices';
 ########################
 # Fill in your details #
 ########################
-my $username = 'Your bulk whois api username';
-my $password = 'Your bulk whois api password';
+my $apiKey = 'Your bulk whois api key';
 
 my @domains = ('google.com', 'whoisxmlapi.com');
 
@@ -56,8 +55,7 @@ sub create_request {
     my $domains_str = '"' . join('", "', @domain_array) . '"';
 
     my $data = '{
-        "username": "' . $username . '",
-        "password": "' . $password . '",
+        "apiKey": "' . $apiKey . '",
         "outputFormat": "json",
         "domains": [
           '. $domains_str . '
@@ -79,8 +77,7 @@ sub get_records {
     my ($id, $start, $max) = @_;
 
     my $data = '{
-        "username": "' . $username . '",
-        "password": "' . $password . '",
+        "apiKey": "' . $apiKey . '",
         "outputFormat": "json",
         "requestId": "' . $id . '",
         "startIndex": ' . $start . ',

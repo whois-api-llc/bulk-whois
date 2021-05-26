@@ -2,15 +2,13 @@ var fs = require('fs'), https = require('https');
 
 var dom = ['google.com', 'youtube.com', 'facebook.com', 'whoisxmlapi.com'];
 var srv = 'www.whoisxmlapi.com', url = '/BulkWhoisLookup/bulkServices/';
-var username = 'Your bulk whois api username';
-var pass = 'Your bulk whois api password';
+var apiKey = 'Your bulk whois api key';
 var file = 'bulk.csv';
 
 function api(path, data, callback)
 {
     var baseData = {
-        password: pass,
-        username: username,
+        apiKey: apiKey,
         outputFormat: 'json'
     };
 
